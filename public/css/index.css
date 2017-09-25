@@ -9,12 +9,13 @@
 
 
 .text { 
-	font-weight: 100;
+	font-weight: 300;
 	font-size: 2vw;
 }
 
 .header_text { 
 	font-size: 13vw;
+	font-weight: 100;
 	font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
 	margin: 0px;
 }
