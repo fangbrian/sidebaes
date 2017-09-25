@@ -66,10 +66,23 @@ ul#smallGroupDirectory {
 	 }
 
 	 .text { 
-		font-size: 3vw;
+		font-size: 5vw;
 	}
 
 	 .header_text { 
 		font-size: 17vw;
+	}
+
+	.profile_picture { 
+		height: 30vw;
+	    width: 30vw;
+	    background-position: center center;
+	    background-repeat: no-repeat;
+	    overflow: hidden;
+	    background: rgba(128, 128, 128, 0.2);
+	 }
+
+	.profile_picture img { 
+	 	height: 30vw;
 	}
 }
