@@ -1,2 +1,2 @@
 web: npm install
-web: node app
+web: NODE_ENV=prod node app
