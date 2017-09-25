@@ -85,4 +85,8 @@ ul#smallGroupDirectory {
 	.profile_picture img { 
 	 	height: 30vw;
 	}
+
+	.profile_description { 
+		padding-left: 20px;
+	 }
 }
