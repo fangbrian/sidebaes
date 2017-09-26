@@ -7,6 +7,25 @@
 	vertical-align: bottom;
 }
 
+a:link {
+	color: black;
+    text-decoration: none;
+}
+
+a:visited {
+	color: black;
+    text-decoration: none;
+}
+
+a:hover {
+	color: black;
+    text-decoration: none;
+}
+
+a:active {
+	color: black;
+    text-decoration: none;
+}
 
 .text { 
 	font-weight: 300;
@@ -19,6 +38,15 @@
 	font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
 	margin: 0px;
 }
+
+.navigation_bar { 
+	display: inline-flex;
+	font-size: 2vw;
+ }
+
+.navigation_button { 
+	padding: 5px;
+ }
 
 .small_group_container { 
  	display: inline-flex;
@@ -88,5 +116,9 @@ ul#smallGroupDirectory {
 
 	.profile_description { 
 		padding-left: 25px;
+	 }
+
+	 .navigation_bar { 
+		font-size: 4vw;
 	 }
 }

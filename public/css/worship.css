@@ -13,14 +13,17 @@ a:link {
 }
 
 a:visited {
+	color: black;
     text-decoration: none;
 }
 
 a:hover {
+	color: black;
     text-decoration: none;
 }
 
 a:active {
+	color: black;
     text-decoration: none;
 }
 
@@ -40,6 +43,14 @@ a:active {
 	margin: 0px;
 }
 
+.navigation_bar { 
+	display: inline-flex;
+	font-size: 2vw;
+ }
+
+.navigation_button { 
+	padding: 5px;
+ }
 
 @media (max-width: 1020px) {
  	.text { 
@@ -49,4 +60,8 @@ a:active {
  	.header_text { 
 		font-size: 17vw;
 	}
+
+	.navigation_bar { 
+		font-size: 4vw;
+	 }
 }
