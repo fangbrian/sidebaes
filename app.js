@@ -18,4 +18,8 @@ app.get('/', function(req, res) {
 	res.sendfile('./views/index.html');
 });
 
+app.get('/worship', function(req, res) { 
+	res.sendfile('./views/worship.html');
+});
+
 app.listen(process.env.PORT || 8080);
