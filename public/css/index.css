@@ -46,7 +46,7 @@ a:active {
 
 .navigation_button { 
 	padding: 5px;
-	color: rgba(128, 128, 128, 0.75);
+	color: rgba(93, 99, 140, 0.52);
  }
 
 .small_group_container { 
@@ -67,7 +67,7 @@ ul#smallGroupDirectory {
     background-position: center center;
     background-repeat: no-repeat;
     overflow: hidden;
-    background: rgba(93, 99, 140, 0.52);
+    background: rgba(128, 128, 128, 0.2);
  }
 
 .profile_picture img { 
