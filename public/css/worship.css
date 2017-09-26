@@ -50,6 +50,7 @@ a:active {
 
 .navigation_button { 
 	padding: 5px;
+	color: rgba(128, 128, 128, 0.75);
  }
 
 @media (max-width: 1020px) {
