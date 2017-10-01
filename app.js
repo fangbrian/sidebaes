@@ -7,6 +7,7 @@ var _url = require('url');
 var request = require('request');
 var bodyParser = require('body-parser');
 var queryString = require('querystring');
+var db = require('./models');
 
 app.use(express.static(__dirname + '/public'));
 
@@ -22,4 +23,27 @@ app.get('/worship', function(req, res) {
 	res.sendfile('./views/worship.html');
 });
 
-app.listen(process.env.PORT || 8080);
+app.post('/prayerRequest', function(req, res) { 
+});
+
+app.get('/prayerRequestData', function(req, res) {
+	db.PrayerRequest.findAll({
+		raw: true
+	}).then((prayerRequests) =>{
+		res.send({
+			"prayer_requests" : prayerRequests 
+		});
+	});
+});
+
+db.sequelize.sync().then(function() {
+	// db.PrayerRequest.create({request:"Hello brian", timestamp: new Date()});
+	// db.PrayerRequest.findAll({
+	// 	raw: true
+	// }).then((prayerRequests) =>{
+	// 	console.log(prayerRequests);
+	// });
+
+  	app.listen(process.env.PORT || 8080);
+});
+
