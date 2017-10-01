@@ -23,7 +23,8 @@ app.get('/worship', function(req, res) {
 	res.sendfile('./views/worship.html');
 });
 
-app.post('/prayerRequest', function(req, res) { 
+app.get('/prayerRequest', function(req, res) { 
+	res.sendfile('./views/prayer_request.html');
 });
 
 app.get('/prayerRequestData', function(req, res) {
