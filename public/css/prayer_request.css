@@ -54,24 +54,33 @@ a:active {
  }
 
 .input { 
-  display:inline-flex;
+  display:inline-block;
   align-items: center;
   width: 620px;
   text-align: center;
 }
 
-input { 
-	border: 5px solid #747575;
-	resize: none;
-	outline: none;
-	-webkit-border-radius: 20px;
-	-moz-border-radius: 20px;
-	border-radius: 40px;
-	padding: 0px 7px;
+input {
+    border: 2px solid #747575;
+    resize: none;
+    outline: none;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    padding: 0px 7px;
+    width: 100%;
+    padding-left: 22px;
+    font-size: 3vw;
+}
+
+.button_container { 
 	width: 100%;
-	/* padding: 1vw; */
-	padding-left: 22px;
-	font-size: 4vw;
+	text-align: right;
+ }
+
+ .button { 
+ 	display: inline-block;
+ 	padding: 3px;
+ 	font-size: 3vw;
   }
 
 i.fa.fa-arrow-circle-right { 
@@ -111,6 +120,10 @@ i.fa.fa-arrow-circle-right {
  	.input { 
 	  width: 90%;
 	}
+
+	input { 
+		font-size: 6vw;
+	 }
 
  	.prayer_request_container { 
 	 	width: 90%;

@@ -53,7 +53,7 @@ function postPrayerRequest() {
 }
 
 function setup() { 
-    $( ".fa-arrow-circle-right" ).click(function() {
+    $( "#postButton" ).click(function() {
         postPrayerRequest();
     });
 }
