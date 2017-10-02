@@ -23,7 +23,7 @@ app.get('/worship', function(req, res) {
 	res.sendfile('./views/worship.html');
 });
 
-app.get('/prayerRequest', function(req, res) { 
+app.get('/prayer', function(req, res) { 
 	res.sendfile('./views/prayer_request.html');
 });
 
@@ -37,14 +37,21 @@ app.get('/prayerRequestData', function(req, res) {
 	});
 });
 
-db.sequelize.sync().then(function() {
-	// db.PrayerRequest.create({request:"Hello brian", timestamp: new Date()});
-	// db.PrayerRequest.findAll({
-	// 	raw: true
-	// }).then((prayerRequests) =>{
-	// 	console.log(prayerRequests);
-	// });
+app.post('/prayerRequestData', function(req, res) {
+	if (req.body.prayer_request) {
+		db.PrayerRequest.create({request: req.body.prayer_request, timestamp: new Date()}).then(prayerRequest => {
+			res.send({
+				"status" : "success"
+			})
+		}).catch(error => {
+			res.send({
+				"status" : "error"
+			})
+		});
+	}
+});
 
+db.sequelize.sync().then(function() {
   	app.listen(process.env.PORT || 8080);
 });
 

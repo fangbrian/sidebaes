@@ -74,9 +74,9 @@ input {
 	font-size: 4vw;
   }
 
-i.fa.fa-arrow-right { 
+i.fa.fa-arrow-circle-right { 
     color: #747575;
-    font-size: 4vw;
+    font-size: 6vw;
     padding: 0px 5px;
   }
  .prayer_request_container { 
@@ -108,8 +108,12 @@ i.fa.fa-arrow-right {
 		font-size: 4vw;
 	 }
 
-	 .prayer_request_container { 
+ 	.input { 
+	  width: 90%;
+	}
+
+ 	.prayer_request_container { 
 	 	width: 90%;
-	  }
+  	}
 }
 	

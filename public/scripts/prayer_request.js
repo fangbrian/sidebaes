@@ -1,5 +1,6 @@
 var prayerRequests = [];
-function onReady() { 
+
+function getPrayerRequests() { 
 	$.ajax({
         type: 'GET',
         datatype: 'json',
@@ -27,6 +28,41 @@ function onReady() {
     });	
 }
 
+function postPrayerRequest() {
+    var prayerRequestString = $('#prayerRequestInput').val();
+    if (prayerRequestString && prayerRequestString != " ") {
+        $.ajax({
+            url: '/prayerRequestData',
+            type: 'POST',
+            data: jQuery.param({ 
+                prayer_request: $('#prayerRequestInput').val()
+            }),
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            success: function (response) {
+               console.log(response);
+               $('#prayerRequestInput').val('');
+               getPrayerRequests();
+            },
+            error: function () {
+                console.log("error posting prayer request");
+            }
+        }); 
+    } else { 
+        $('#prayerRequestInput').val('');
+    }
+}
+
+function setup() { 
+    $( ".fa-arrow-circle-right" ).click(function() {
+        postPrayerRequest();
+    });
+}
+
 $(document).ready(function() { 
-	onReady();
+    setup();
+    getPrayerRequests();
+
+    var interval = setInterval(function() {
+        getPrayerRequests();
+    }, 20000)
 });
