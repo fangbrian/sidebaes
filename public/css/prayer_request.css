@@ -104,10 +104,36 @@ i.fa.fa-arrow-circle-right {
 	list-style-type: none;
  }
 
+ .hearts_container {
+ 	display: inline-flex;
+ 	align-items: baseline;
+ 	font-size: 2vw;
+ }
+
+ .hearts_parent {
+ 	text-align: right;
+ }
+
+.heart { 
+	padding: 5px;
+}
+
+.heart_text {
+	color: rgba(70, 70, 70, 0.84);
+}
+
+i.fa.fa-heart-o.heart {
+	color: rgba(255, 0, 0, 0.79);
+}
+
 @media (max-width: 1020px) {
  	.text { 
 		font-size: 5vw;
 	}
+
+	.hearts_container {
+	 	font-size: 4vw;
+	 }
 
  	.header_text { 
 		font-size: 17vw;

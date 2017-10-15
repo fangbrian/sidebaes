@@ -1,7 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
   	var requestTable = sequelize.define("PrayerRequest", {
 	    request: DataTypes.STRING,
-	  	timestamp: DataTypes.DATE
+	  	timestamp: DataTypes.DATE,
+	  	hearts: DataTypes.INTEGER
 	  });
 
   	return requestTable;

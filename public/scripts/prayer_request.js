@@ -12,11 +12,20 @@ function getPrayerRequests() {
             $("#prayerRequestList").html("");
             var html = "";
             for (var i = prayerRequests.length - 1; i >= 0; i--) { 
-                console.log(prayerRequests[i]);
                 html += "<li class='prayer_request'>";
                 html += "<p class='text'>"
                 html += prayerRequests[i].request
                 html += "</p>"
+                html += "<div class='hearts_parent'><div class='hearts_container' onClick='heartClicked("
+                html += prayerRequests[i].id
+                html += ")'>"
+                html += "<i class='fa fa-heart-o heart' aria-hidden='true'></i>"
+                html += "<p class='heart_text heart' id='" 
+                html += prayerRequests[i].id
+                html += "'>"
+                html += prayerRequests[i].hearts.toString()
+                html += "</p>"
+                html += "</div></div>"
                 html += "<hr/>"
                 html += "</li>"
             }
@@ -56,6 +65,30 @@ function setup() {
     $( "#postButton" ).click(function() {
         postPrayerRequest();
     });
+}
+
+function heartClicked(prayerRequestId) { 
+    console.log(prayerRequestId);
+    console.log($("#" + prayerRequestId).text());
+    $("#" + prayerRequestId).text((parseInt($("#" + prayerRequestId).text()) + 1).toString());
+    if (prayerRequestId) {
+        $.ajax({
+            url: '/heart',
+            type: 'POST',
+            data: jQuery.param({ 
+                id: prayerRequestId
+            }),
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            success: function (response) {
+               console.log(response);
+            },
+            error: function () {
+                console.log("error posting heart increment");
+            }
+        }); 
+    } else { 
+        $('#prayerRequestInput').val('');
+    }
 }
 
 $(document).ready(function() { 

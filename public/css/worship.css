@@ -54,6 +54,11 @@ a:active {
 	color: rgba(93, 99, 140, 0.52);
  }
 
+ .hearts_container {
+ 	display: inline-flex;
+ 	align-items: baseline;
+ }
+
 @media (max-width: 1020px) {
  	.text { 
 		font-size: 5vw;

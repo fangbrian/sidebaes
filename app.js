@@ -30,7 +30,7 @@ app.get('/prayer', function(req, res) {
 app.get('/prayerRequestData', function(req, res) {
 	db.PrayerRequest.findAll({
 		raw: true
-	}).then((prayerRequests) =>{
+	}).then((prayerRequests) => {
 		res.send({
 			"prayer_requests" : prayerRequests 
 		});
@@ -39,7 +39,7 @@ app.get('/prayerRequestData', function(req, res) {
 
 app.post('/prayerRequestData', function(req, res) {
 	if (req.body.prayer_request) {
-		db.PrayerRequest.create({request: req.body.prayer_request, timestamp: new Date()}).then(prayerRequest => {
+		db.PrayerRequest.create({request: req.body.prayer_request, timestamp: new Date(), hearts: 0}).then(prayerRequest => {
 			res.send({
 				"status" : "success"
 			})
@@ -47,6 +47,25 @@ app.post('/prayerRequestData', function(req, res) {
 			res.send({
 				"status" : "error"
 			})
+		});
+	}
+});
+
+app.post('/heart', function(req, res) {
+	if (req.body.id) { 
+		db.PrayerRequest.findById(req.body.id).then(prayerRequest => {
+			console.log(prayerRequest);
+			if(prayerRequest) { 
+				prayerRequest.increment('hearts', {by: 1}).then(() => {
+					res.send({
+						"status" : "success"
+					})
+				});
+			} else {
+				res.send({
+						"status" : "error"
+					})
+			}
 		});
 	}
 });
